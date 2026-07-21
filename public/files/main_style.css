@@ -69,7 +69,7 @@
  #nav-wrap .container ul { list-style: none; float: right; }
  #nav-wrap .container ul li { list-style: none; float: left; margin-left:20px; }
  #nav-wrap .container ul li a { float: left; display: block; font-family: 'Oswald', Impact, sans-serif; color: #777777; text-decoration: none; padding: 5px 10px; border: 0; outline: 0; list-style-type: none; font-size: 18px; line-height:28px; text-transform:uppercase; }
- #nav-wrap .container ul li#active a, #nav-wrap .container ul li a:hover { color: #fff; background:url(theme/nav-bg_green.png?444695) repeat-x top; border: 0; }
+ #nav-wrap .container ul li#active > a, #nav-wrap .container ul li > a:hover { color: #fff; background:#47b403 !important; border: 0; }
  #wsite-menus { z-index: 10000 !important; }
  #wsite-menus .wsite-menu-wrap { margin-top: 8px !important; overflow: visible !important; }
  #wsite-menus .wsite-menu {
