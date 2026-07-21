@@ -519,7 +519,7 @@ jQuery(document).ready(init);
 <div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
 
 <div>
-	<form enctype="multipart/form-data" action="//www.weebly.com/weebly/apps/formSubmit.php" method="POST" id="form-472703280149834788">
+	<form enctype="multipart/form-data" action="mailto:russ@sandyfundsi.org" method="POST" id="form-472703280149834788">
 		<div id="472703280149834788-form-parent" class="wsite-form-container"
 				 style="margin-top:10px;">
 			<ul class="formlist" id="472703280149834788-form-list">
@@ -593,13 +593,91 @@ jQuery(document).ready(init);
 			<input type="hidden" name="wsite_approved" id="wsite-approved" value="approved" />
 			<input type="hidden" name="ucfid" value="472703280149834788" />
 			<input type="hidden" name="recaptcha_token"/>
-			<input type="submit" role="button" aria-label="Submit" value="Submit" style="position:absolute;top:0;left:-9999px;width:1px;height:1px" />
-			<a class="wsite-button">
-				<span class="wsite-button-inner">Submit</span>
-			</a>
+			<button type="submit" class="sandy-form-submit">Submit</button>
+			<div id="sandy-form-status" class="sandy-form-status" aria-live="polite"></div>
 		</div>
 	</form>
 	<div id="g-recaptcha-472703280149834788" class="recaptcha" data-size="invisible" data-recaptcha="0" data-sitekey="6Ldf5h8UAAAAAJFJhN6x2OfZqBvANPQcnPa8eb1C"></div>
+	<style>
+		#form-472703280149834788 .sandy-form-submit {
+			appearance: none;
+			background: #333333;
+			border: 1px solid #222222;
+			border-radius: 3px;
+			color: #ffffff;
+			cursor: pointer;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 13px;
+			font-weight: 700;
+			line-height: 1;
+			margin-top: 14px;
+			padding: 10px 18px;
+			text-transform: uppercase;
+		}
+		#form-472703280149834788 .sandy-form-submit:hover,
+		#form-472703280149834788 .sandy-form-submit:focus {
+			background: #111111;
+		}
+		#form-472703280149834788 .sandy-form-status {
+			color: #333333;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 13px;
+			line-height: 1.4;
+			margin-top: 10px;
+			max-width: 460px;
+		}
+	</style>
+	<script>
+	(function() {
+		var form = document.getElementById('form-472703280149834788');
+		if (!form) return;
+
+		function value(id) {
+			var field = document.getElementById(id);
+			return field ? field.value.trim() : '';
+		}
+
+		form.addEventListener('submit', function(event) {
+			event.preventDefault();
+
+			var yourFirst = value('input-471706898816290061');
+			var yourLast = value('input-471706898816290061-1');
+			var yourPhone = value('input-527496386568990733');
+			var theirFirst = value('input-583699802700857304');
+			var theirLast = value('input-583699802700857304-1');
+			var theirPhone = value('input-339099634456946524');
+			var comment = value('input-966217795810033178');
+			var status = document.getElementById('sandy-form-status');
+
+			if (!yourFirst || !yourLast || !yourPhone || !theirFirst || !theirLast || !theirPhone) {
+				if (status) status.textContent = 'Please complete all required fields before submitting.';
+				return;
+			}
+
+			var subject = 'SI Sandy Relief Fund help request';
+			var body = [
+				'SI Sandy Relief Fund help request',
+				'',
+				'Your name: ' + yourFirst + ' ' + yourLast,
+				'Your phone number: ' + yourPhone,
+				'',
+				'Their name: ' + theirFirst + ' ' + theirLast,
+				'Their phone number: ' + theirPhone,
+				'',
+				'Comment:',
+				comment || '(none provided)'
+			].join('\n');
+
+			var encodedSubject = encodeURIComponent(subject);
+			var encodedBody = encodeURIComponent(body);
+			var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=russ@sandyfundsi.org&su=' + encodedSubject + '&body=' + encodedBody;
+			var mailtoUrl = 'mailto:russ@sandyfundsi.org?subject=' + encodedSubject + '&body=' + encodedBody;
+			var draft = window.open(gmailUrl, '_blank');
+			if (!draft) window.location.href = mailtoUrl;
+			if (status) status.textContent = 'An email draft has opened. Please review it and click Send.';
+		});
+	})();
+	</script>
 
 
 
