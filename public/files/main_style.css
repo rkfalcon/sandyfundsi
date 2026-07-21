@@ -59,15 +59,62 @@
  #header-right .wsite-search { width:202px; height:33px; background: url(theme/search-bg.png?444695) no-repeat; margin:0px 0px ; vertical-align: middle; }
  #header-right .wsite-search-input { margin:3px 0px 0px 0px; width: 155px; border: none; color: #333333; font-size: 14px; background: none; }
  #header-right .wsite-search-button { position: relative; width: 15px; height: 16px; margin: 8px 0px 0px 20px; right:7px; background:url(theme/search-button.gif?444695) no-repeat top right ; }
- #nav-wrap .container { clear: both; overflow: hidden; position: relative; }
+ #nav-wrap .container { clear: both; overflow: visible; position: relative; }
  #nav-wrap table { width:100%; margin-bottom:20px; margin-top:44px; }
  #nav-wrap td { verticle-align:middle; }
  #nav-wrap .container ul { list-style: none; float: right; }
  #nav-wrap .container ul li { list-style: none; float: left; margin-left:20px; }
  #nav-wrap .container ul li a { float: left; display: block; font-family: 'Oswald', Impact, sans-serif; color: #777777; text-decoration: none; padding: 5px 10px; border: 0; outline: 0; list-style-type: none; font-size: 18px; line-height:28px; text-transform:uppercase; }
  #nav-wrap .container ul li#active a, #nav-wrap .container ul li a:hover { color: #fff; background:url(theme/nav-bg_green.png?444695) repeat-x top; border: 0; }
- #wsite-menus .wsite-menu li a { font-family: 'Oswald', Impact, sans-serif; color: #888; font-size:16px; background:url(theme/submenu-bg.png?444695) repeat top left !important; border: 0; text-transform:uppercase; }
- #wsite-menus .wsite-menu li a:hover { color:#fff ; background: #47b403 !important; }
+ #wsite-menus { z-index: 10000 !important; }
+ #wsite-menus .wsite-menu-wrap { margin-top: 8px !important; overflow: visible !important; }
+ #wsite-menus .wsite-menu {
+   min-width: 210px !important;
+   padding: 6px 0 !important;
+   background: #ffffff !important;
+   border: 1px solid #d8d8d8 !important;
+   border-radius: 3px !important;
+   box-shadow: 0 8px 20px rgba(0,0,0,0.14) !important;
+ }
+ #wsite-menus .wsite-menu li { float: none !important; display: block !important; margin: 0 !important; width: 100% !important; }
+ #wsite-menus .wsite-menu li a {
+   display: block !important;
+   float: none !important;
+   box-sizing: border-box !important;
+   width: 100% !important;
+   min-height: 36px !important;
+   padding: 8px 14px !important;
+   background: #ffffff !important;
+   border: 0 !important;
+   color: #555555 !important;
+   font-family: 'Oswald', Impact, sans-serif;
+   font-size: 15px !important;
+   line-height: 20px !important;
+   text-align: left !important;
+   text-transform: uppercase;
+   white-space: nowrap !important;
+ }
+ #wsite-menus .wsite-menu li a:hover, #wsite-menus .wsite-menu li.wsite-nav-current a {
+   color:#ffffff !important;
+   background: #47b403 !important;
+ }
+ #wsite-menus .wsite-menu-title { display: block !important; white-space: nowrap !important; }
+ #nav-wrap .container ul.wsite-menu { float: none; }
+ #nav-wrap .container ul.wsite-menu li { float: none; margin-left: 0; }
+ #nav-wrap .container ul.wsite-menu li a {
+   float: none;
+   min-width: 210px;
+   box-sizing: border-box;
+   padding: 8px 14px;
+   background: #ffffff !important;
+   color: #555555 !important;
+   line-height: 20px;
+   white-space: nowrap;
+ }
+ #nav-wrap .container ul.wsite-menu li a:hover, #nav-wrap .container ul.wsite-menu li.wsite-nav-current a {
+   background: #47b403 !important;
+   color: #ffffff !important;
+ }
  #banner { position:relative; }
  #banner-top{ margin-top:0px; background:url(theme/banner-top.png?444695) no-repeat top; height:31px; width:100%; }
  #banner-wrap .container{ background: url(theme/content-bg.png?444695) repeat-y; }
