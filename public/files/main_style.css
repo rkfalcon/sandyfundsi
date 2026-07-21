@@ -16,11 +16,12 @@
  div#content {min-height:400px;}
  #header-wrap { background: url(theme/top-bar-bg.jpg?444695) repeat-x; }
  #logo, #logo a { font-family: 'Oswald', sans-serif; font-size:40px; color:#444444; font-weight:normal; }
- #logo .sandy-brand { display: inline-flex; align-items: center; gap: 14px; }
+ #logo .sandy-brand { display: inline-flex; align-items: center; gap: 14px; white-space: nowrap; }
  #logo .sandy-brand-logo { width: 74px; height: 74px; object-fit: contain; flex: 0 0 auto; }
+ #logo #wsite-title { display: inline-block; white-space: nowrap !important; line-height: 1.05 !important; }
  #header { border-collapse: collapse; border-spacing: 0; width:100%; height: 54px; }
  #header td { vertical-align: middle; text-align: left; margin:0px 0px; }
- #logo { padding-left:5px; }
+ #logo { padding-left:5px; white-space: nowrap; }
  #header-right table { float: right; width: 1px; }
  #header-right td { padding: 0; }
  #header .phone-number .wsite-text { font-family: 'Droid Sans', sans-serif; padding:18px 20px 18px 10px !important; font-weight:bold; color:#888; border-right:1px solid #dadada; display:inline-block; }
