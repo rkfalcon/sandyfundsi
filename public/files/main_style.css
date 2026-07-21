@@ -16,12 +16,12 @@
  div#content {min-height:400px;}
  #header-wrap { background: url(theme/top-bar-bg.jpg?444695) repeat-x; }
  #logo, #logo a { font-family: 'Oswald', sans-serif; font-size:40px; color:#444444; font-weight:normal; }
- #logo .sandy-brand { display: inline-flex; align-items: center; gap: 14px; white-space: nowrap; }
- #logo .sandy-brand-logo { width: 74px; height: 74px; object-fit: contain; flex: 0 0 auto; }
- #logo #wsite-title { display: inline-block; white-space: nowrap !important; line-height: 1.05 !important; }
+ #logo .sandy-brand { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; }
+ #logo .sandy-brand-logo { width: 58px; height: 58px; object-fit: contain; flex: 0 0 auto; }
+ #logo #wsite-title { display: inline-block; white-space: nowrap !important; font-size: 36px !important; line-height: 1.05 !important; }
  #header { border-collapse: collapse; border-spacing: 0; width:100%; height: 54px; }
  #header td { vertical-align: middle; text-align: left; margin:0px 0px; }
- #logo { padding-left:5px; white-space: nowrap; }
+ #logo { width: 470px; padding-left:5px; white-space: nowrap; }
  #header-right table { float: right; width: 1px; }
  #header-right td { padding: 0; }
  #header .phone-number .wsite-text { font-family: 'Droid Sans', sans-serif; padding:18px 20px 18px 10px !important; font-weight:bold; color:#888; border-right:1px solid #dadada; display:inline-block; }
@@ -64,12 +64,13 @@
  #header-right .wsite-search { width:202px; height:33px; background: url(theme/search-bg.png?444695) no-repeat; margin:0px 0px ; vertical-align: middle; }
  #header-right .wsite-search-input { margin:3px 0px 0px 0px; width: 155px; border: none; color: #333333; font-size: 14px; background: none; }
  #header-right .wsite-search-button { position: relative; width: 15px; height: 16px; margin: 8px 0px 0px 20px; right:7px; background:url(theme/search-button.gif?444695) no-repeat top right ; }
- #nav-wrap .container { clear: both; overflow: visible; position: relative; }
- #nav-wrap table { width:100%; margin-bottom:20px; margin-top:44px; }
+ #nav-wrap .container { clear: both; overflow: visible; position: relative; width: 1120px; }
+ #nav-wrap table { width:100%; margin-bottom:20px; margin-top:44px; table-layout: fixed; }
  #nav-wrap td { verticle-align:middle; }
+ #nav-wrap td:last-child { white-space: nowrap; }
  #nav-wrap .container ul { list-style: none; float: right; }
- #nav-wrap .container ul li { list-style: none; float: left; margin-left:20px; }
- #nav-wrap .container ul li a { float: left; display: block; font-family: 'Oswald', Impact, sans-serif; color: #777777; text-decoration: none; padding: 5px 10px; border: 0; outline: 0; list-style-type: none; font-size: 18px; line-height:28px; text-transform:uppercase; }
+ #nav-wrap .container ul li { list-style: none; float: left; margin-left:12px; }
+ #nav-wrap .container ul li a { float: left; display: block; font-family: 'Oswald', Impact, sans-serif; color: #777777; text-decoration: none; padding: 5px 8px; border: 0; outline: 0; list-style-type: none; font-size: 16px; line-height:28px; text-transform:uppercase; white-space: nowrap; }
  #nav-wrap .container ul li#active > a, #nav-wrap .container ul li > a:hover { color: #fff; background:#47b403 !important; border: 0; }
  #wsite-menus { z-index: 10000 !important; }
  #wsite-menus .wsite-menu-wrap { margin-top: 8px !important; overflow: visible !important; }
