@@ -135,7 +135,7 @@ else document.observe('dom:loaded', initFlyouts);
         <div class="container">
    			<div id='wsite-content' class='wsite-elements wsite-not-footer'>
 <div>
-<form enctype="multipart/form-data" action="http://www.weebly.com/weebly/apps/formSubmit.php" method="POST" id="form-965496648877945595">
+<form enctype="multipart/form-data" action="mailto:russ@sandyfundsi.org" method="POST" id="form-965496648877945595">
 <div id="965496648877945595-form-parent" class="wsite-form-container" style="margin-top:10px;">
   <ul class="formlist" id="965496648877945595-form-list">
     <h2 style="text-align:left;"><font size="4">IF you have made a donation and require a receipt please complete the form below</font></h2>
@@ -144,11 +144,11 @@ else document.observe('dom:loaded', initFlyouts);
 				<label class="wsite-form-label" for="input-634687277319224468">Name <span class="form-required">*</span></label>
 				<div style="clear:both;"></div>
 				<div class="wsite-form-input-container wsite-form-left wsite-form-input-first-name">
-					<input id="input-634687277319224468" class="wsite-form-input wsite-input" type="text" name="_u634687277319224468[first]" />
+					<input aria-required="true" id="input-634687277319224468" class="wsite-form-input wsite-input" type="text" name="_u634687277319224468[first]" />
 					<label class="wsite-form-sublabel" for="input-634687277319224468">First</label>
 				</div>
 				<div class="wsite-form-input-container wsite-form-right wsite-form-input-last-name">
-					<input id="input-634687277319224468-1" class="wsite-form-input wsite-input" type="text" name="_u634687277319224468[last]" />
+					<input aria-required="true" id="input-634687277319224468-1" class="wsite-form-input wsite-input" type="text" name="_u634687277319224468[last]" />
 					<label class="wsite-form-sublabel" for="input-634687277319224468-1">Last</label>
 				</div>
 				<div id="instructions-634687277319224468" class="wsite-form-instructions" style="display:none;"></div>
@@ -158,7 +158,7 @@ else document.observe('dom:loaded', initFlyouts);
 <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
 				<label class="wsite-form-label" for="input-357341370962336658">Email <span class="form-required">*</span></label>
 				<div class="wsite-form-input-container">
-					<input id="input-357341370962336658" class="wsite-form-input wsite-input wsite-input-width-370px" type="text" name="_u357341370962336658" />
+					<input aria-required="true" id="input-357341370962336658" class="wsite-form-input wsite-input wsite-input-width-370px" type="email" name="_u357341370962336658" />
 				</div>
 				<div id="instructions-357341370962336658" class="wsite-form-instructions" style="display:none;"></div>
 			</div></div>
@@ -171,9 +171,80 @@ else document.observe('dom:loaded', initFlyouts);
   <input type="hidden" name="form_version" value="2" />
   <input type="hidden" name="wsite_approved" id="wsite-approved" value="approved" />
   <input type="hidden" name="ucfid" value="965496648877945595" />
-  <input type='submit' style='position:absolute;top:0;left:-9999px;width:1px;height:1px' /><a class='wsite-button' onclick="document.getElementById('form-965496648877945595').submit()"><span class='wsite-button-inner'>Submit</span></a>
+  <button type="submit" class="sandy-form-submit">Submit</button>
+  <div id="sandy-receipt-form-status" class="sandy-form-status" aria-live="polite"></div>
 </div>
 </form>
+
+<style>
+	#form-965496648877945595 .sandy-form-submit {
+		background: #333333;
+		border: 1px solid #222222;
+		border-radius: 3px;
+		color: #ffffff;
+		cursor: pointer;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 13px;
+		font-weight: 700;
+		line-height: 1;
+		margin-top: 14px;
+		padding: 10px 18px;
+		text-transform: uppercase;
+	}
+	#form-965496648877945595 .sandy-form-submit:hover,
+	#form-965496648877945595 .sandy-form-submit:focus {
+		background: #111111;
+	}
+	#form-965496648877945595 .sandy-form-status {
+		color: #333333;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 13px;
+		line-height: 1.4;
+		margin-top: 10px;
+		max-width: 460px;
+	}
+</style>
+<script>
+(function() {
+	var form = document.getElementById('form-965496648877945595');
+	if (!form) return;
+
+	function value(id) {
+		var field = document.getElementById(id);
+		return field ? field.value.trim() : '';
+	}
+
+	form.addEventListener('submit', function(event) {
+		event.preventDefault();
+
+		var firstName = value('input-634687277319224468');
+		var lastName = value('input-634687277319224468-1');
+		var email = value('input-357341370962336658');
+		var status = document.getElementById('sandy-receipt-form-status');
+
+		if (!firstName || !lastName || !email) {
+			if (status) status.textContent = 'Please complete all required fields before submitting.';
+			return;
+		}
+
+		var subject = 'SI Sandy Relief Fund receipt request';
+		var body = [
+			'SI Sandy Relief Fund receipt request',
+			'',
+			'Name: ' + firstName + ' ' + lastName,
+			'Email: ' + email
+		].join('\n');
+
+		var encodedSubject = encodeURIComponent(subject);
+		var encodedBody = encodeURIComponent(body);
+		var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=russ@sandyfundsi.org&su=' + encodedSubject + '&body=' + encodedBody;
+		var mailtoUrl = 'mailto:russ@sandyfundsi.org?subject=' + encodedSubject + '&body=' + encodedBody;
+		var draft = window.open(gmailUrl, '_blank');
+		if (!draft) window.location.href = mailtoUrl;
+		if (status) status.textContent = 'An email draft has opened. Please review it and click Send.';
+	});
+})();
+</script>
 
 
 </div>
