@@ -183,3 +183,187 @@ div.paragraph ul, div.paragraph ol { padding-left: 2.3em !important; margin: 5px
 div.paragraph li { padding-left: 5px !important; margin: 3px 0 0 !important; }
 div.paragraph ul, div.paragraph ul li { list-style: disc outside !important; }
 div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; }
+
+@media (max-width: 700px) {
+ body {
+   min-width: 0;
+   overflow-x: hidden;
+   background: #ffffff;
+   font-size: 17px;
+ }
+ .container,
+ #nav-wrap .container,
+ #main-wrap .container,
+ #main-wrap-bottom .container,
+ #footer-wrap .container {
+   box-sizing: border-box;
+   width: 100% !important;
+   max-width: 100% !important;
+   margin: 0 !important;
+ }
+ #header-wrap .container,
+ #banner-wrap .container,
+ #footer-wrap .container {
+   padding-left: 16px;
+   padding-right: 16px;
+ }
+ #header,
+ #header tbody,
+ #header tr,
+ #header td,
+ #nav-wrap table,
+ #nav-wrap tbody,
+ #nav-wrap tr,
+ #nav-wrap td,
+ .wsite-multicol-table,
+ .wsite-multicol-tbody,
+ .wsite-multicol-tr,
+ .wsite-multicol-col {
+   display: block !important;
+   box-sizing: border-box;
+   width: 100% !important;
+ }
+ #header { height: auto; }
+ #header .phone-number .wsite-text {
+   border-right: 0;
+   display: block;
+   padding: 12px 0 !important;
+   text-align: center;
+ }
+ #header-right,
+ #header-right table,
+ #header-right tbody,
+ #header-right tr,
+ #header-right td {
+   display: block !important;
+   width: 100% !important;
+ }
+ #header-right table { float: none; }
+ #header-right .social { display: none; }
+ #header-right .search { padding: 0 0 12px !important; text-align: center !important; }
+ #header-right .wsite-search { display: inline-block; }
+ #nav-wrap table {
+   margin: 18px 0 20px;
+   table-layout: auto;
+ }
+ #logo {
+   width: 100% !important;
+   padding-left: 0;
+   text-align: center;
+ }
+ #logo .sandy-brand {
+   justify-content: center;
+   gap: 9px;
+ }
+ #logo .sandy-brand-logo {
+   width: 42px;
+   height: 42px;
+ }
+ #logo #wsite-title {
+   font-size: 27px !important;
+   line-height: 1.1 !important;
+ }
+ #nav-wrap td:last-child { white-space: normal; }
+ #nav-wrap .container ul {
+   display: flex;
+   float: none;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 6px;
+   margin-top: 14px;
+ }
+ #nav-wrap .container ul li {
+   float: none;
+   margin: 0;
+ }
+ #nav-wrap .container ul li a {
+   float: none;
+   font-size: 13px;
+   line-height: 18px;
+   padding: 8px 7px;
+ }
+ #banner-top,
+ #banner-wrap,
+ #main-wrap-bottom,
+ #footer-wrap-inner,
+ .left-image,
+ .right-image {
+   display: none;
+ }
+ #main-wrap .container {
+   background: #ffffff;
+   color: #000000;
+   min-height: 0;
+   padding: 18px 18px 28px !important;
+ }
+ #main-wrap,
+ #main-wrap .container,
+ #wsite-content {
+   font-size: 17px;
+   line-height: 1.55;
+ }
+ #wsite-content div.paragraph,
+ #wsite-content p,
+ .blog-sidebar div.paragraph,
+ .blog-sidebar p {
+   font-size: 17px !important;
+   line-height: 1.55 !important;
+ }
+ .wsite-elements.wsite-not-footer h2,
+ #wsite-content h2,
+ .blog-sidebar h2,
+ .blog-title,
+ .blog-title a {
+   font-size: 28px !important;
+   line-height: 1.2 !important;
+   word-break: normal;
+ }
+ .wsite-multicol-table-wrap {
+   margin-left: 0 !important;
+   margin-right: 0 !important;
+ }
+ .wsite-multicol-col {
+   padding: 0 !important;
+ }
+ .blog-body table,
+ .blog-body tbody,
+ .blog-body tr,
+ .blog-body td,
+ .blog-content,
+ .blog-sidebar {
+   display: block !important;
+   box-sizing: border-box;
+   width: 100% !important;
+ }
+ .blog-sidebar {
+   margin-top: 26px;
+   padding-top: 20px;
+   border-top: 1px solid #dddddd;
+ }
+ img,
+ .galleryImageBorder,
+ .wsite-image img,
+ .blog-content img,
+ iframe,
+ object,
+ embed {
+   max-width: 100% !important;
+   height: auto !important;
+ }
+ .wsite-image,
+ .wsite-image div,
+ .blog-content span[style*="float"],
+ #wsite-content span[style*="float"] {
+   float: none !important;
+   clear: both !important;
+   display: block !important;
+   max-width: 100% !important;
+ }
+ .wsite-form-input,
+ textarea,
+ input[type="text"],
+ input[type="email"] {
+   box-sizing: border-box;
+   max-width: 100% !important;
+ }
+}
