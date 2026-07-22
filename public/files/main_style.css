@@ -325,6 +325,11 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
  .wsite-multicol-col {
    padding: 0 !important;
  }
+ #blogTable,
+ #blogTable tbody,
+ #blogTable tr,
+ #blogTable td,
+ .blog-body,
  .blog-body table,
  .blog-body tbody,
  .blog-body tr,
@@ -335,6 +340,61 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
    box-sizing: border-box;
    width: 100% !important;
  }
+ #blogTable {
+   table-layout: auto !important;
+ }
+ .blog-body {
+   float: none !important;
+ }
+ .blog-post {
+   clear: both;
+   margin-bottom: 34px;
+ }
+ .blog-header,
+ .blog-date,
+ .blog-comments,
+ .blog-comments-bottom {
+   clear: both;
+   float: none !important;
+   display: block !important;
+   text-align: left !important;
+ }
+ .blog-date,
+ .blog-comments {
+   margin: 6px 0 !important;
+   font-size: 15px !important;
+   line-height: 1.35 !important;
+ }
+ .blog-separator {
+   clear: both;
+ }
+ .blog-title {
+   margin: 0 0 8px !important;
+ }
+ #wsite-content .blog-title,
+ #wsite-content .blog-title a,
+ .wsite-elements.wsite-not-footer #wsite-content .blog-title,
+ .wsite-elements.wsite-not-footer #wsite-content .blog-title a {
+   font-size: 26px !important;
+   line-height: 1.18 !important;
+   letter-spacing: 0 !important;
+   overflow-wrap: normal;
+   word-break: normal;
+ }
+ .blog-sidebar h2,
+ .wsite-elements.wsite-not-footer .blog-sidebar h2 {
+   font-size: 24px !important;
+   line-height: 1.2 !important;
+   margin: 14px 0 6px !important;
+   padding: 0 !important;
+ }
+ .blog-sidebar ul,
+ .blog-sidebar li,
+ .columnlist-blog {
+   margin-left: 0 !important;
+   padding-left: 0 !important;
+   list-style: none !important;
+ }
  .blog-sidebar {
    margin-top: 26px;
    padding-top: 20px;
@@ -344,6 +404,11 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
  .galleryImageBorder,
  .wsite-image img,
  .blog-content img,
+ .blog-content div[id$="-slideshow"],
+ .blog-content .wslide,
+ .blog-content .wslide-content,
+ .blog-content .wslide-slides,
+ .blog-content .wslide-slide,
  iframe,
  object,
  embed {
