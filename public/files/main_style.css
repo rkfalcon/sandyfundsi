@@ -404,14 +404,26 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
  .galleryImageBorder,
  .wsite-image img,
  .blog-content img,
+ iframe,
+ object,
+ embed {
+   max-width: 100% !important;
+   height: auto !important;
+ }
  .blog-content div[id$="-slideshow"],
  .blog-content .wslide,
  .blog-content .wslide-content,
  .blog-content .wslide-slides,
- .blog-content .wslide-slide,
- iframe,
- object,
- embed {
+ .blog-content .wslide-slide {
+   box-sizing: border-box;
+   max-width: 100% !important;
+ }
+ .blog-content div[id$="-slideshow"] {
+   clear: both;
+   margin: 12px 0 18px;
+   overflow: visible !important;
+ }
+ .blog-content .wslide img {
    max-width: 100% !important;
    height: auto !important;
  }
